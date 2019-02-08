@@ -1,5 +1,6 @@
 function initialize() {
     var locations = [
+	/* Name, Lat, Long, Weight, Sequence Num */
 	['Sandipan Deb', 28.653, 77.196, 1.0, 39],
 	['Dobrain Star', 24.807, 93.941, 1.0, 38],
 	['Anil Bhatia', 45.739, -87.074, 1.0, 37],
@@ -46,6 +47,7 @@ function initialize() {
   ];
 
   var center = [0, 0];
+  var totalweight = 0;
 
   window.map = new google.maps.Map(document.getElementById('map'), {
     mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -63,6 +65,7 @@ function initialize() {
 
     center[0] += locations[i][1] * locations[i][3];
     center[1] += locations[i][2] * locations[i][3];
+    totalweight += locations[i][3];
 
 
     bounds.extend(marker.position);
@@ -75,8 +78,8 @@ function initialize() {
     })(marker, i));
   }
 
-  center[0] /= locations.length;
-  center[1] /= locations.length;
+  center[0] /= totalweight;
+  center[1] /= totalweight;
 
   marker = new google.maps.Marker({
     position: new google.maps.LatLng(center[0], center[1]),
@@ -107,6 +110,7 @@ function loadScript() {
   var script = document.createElement('script');
   script.type = 'text/javascript';
   script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBPiGF_amHt8-0fWOgkKQRKaAAcsDzv_L8&v=3.exp&' + 'callback=initialize';
+//  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' + 'callback=initialize';
   document.body.appendChild(script);
 }
 
