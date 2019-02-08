@@ -1,3 +1,25 @@
+function drawCenterOfMass(name, lat, lng, color) {
+  var infowindow = new google.maps.InfoWindow();
+  var bounds = new google.maps.LatLngBounds();
+
+  marker = new google.maps.Marker({
+    position: new google.maps.LatLng(lat, lng),
+    map: map,
+    icon: {
+      url: "http://maps.google.com/mapfiles/ms/icons/" + color + "-dot.png"
+    }
+  });
+
+//  bounds.extend(marker.position);
+
+  google.maps.event.addListener(marker, 'click', (function(marker) {
+    return function() {
+      infowindow.setContent(name);
+      infowindow.open(map, marker);
+    }
+  })(marker));
+}
+
 function initialize() {
     var locations = [
 	/* Name, Lat, Long, Weight, Sequence Num */
@@ -67,7 +89,6 @@ function initialize() {
     center[1] += locations[i][2] * locations[i][3];
     totalweight += locations[i][3];
 
-
     bounds.extend(marker.position);
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -81,22 +102,10 @@ function initialize() {
   center[0] /= totalweight;
   center[1] /= totalweight;
 
-  marker = new google.maps.Marker({
-    position: new google.maps.LatLng(center[0], center[1]),
-    map: map,
-    icon: {
-      url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-    }
-  });
-
-  bounds.extend(marker.position);
-
-  google.maps.event.addListener(marker, 'click', (function(marker) {
-    return function() {
-      infowindow.setContent('Center of Mass');
-      infowindow.open(map, marker);
-    }
-  })(marker));
+  drawCenterOfMass('Center of Mass Prime', center[0], center[1], 'blue');
+  drawCenterOfMass('Center of Mass 180', center[0], center[1]+180, 'pink');
+  drawCenterOfMass('Center of Mass USA', center[0], center[1]-77, 'green');
+  drawCenterOfMass('Center of Mass LA', center[0], center[1]-118, 'purple');
 
   map.fitBounds(bounds);
 
