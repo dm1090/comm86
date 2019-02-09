@@ -32,7 +32,7 @@ function initialize() {
 	['Tapas Paul', 28.615, 77.180, 1.0, 33],
 	['Kalyan Samanta', 21.482, 86.918, 1.0, 32],
 	['Partha Bose', 43.774, -79.236, 1.0, 31],
-	['Sumit Sur', 39.722, -105.022, 1.0, 30],
+	['Sumit Sur', 40.012, -105.266, 1.0, 30],
 	['Abhijit Ghosh', 37.767, -122.410, 1.0, 29],
 	['Mangesh Chansarkar', 33.679, -117.772, 1.0, 28],
 	['Rajat Sen', 39.922, -74.903, 1.0, 27],
