@@ -68,6 +68,13 @@ function initialize() {
 	['Bedo 0.5', 34.117, -118.218, 0.5, 1]
   ];
 
+  var centerOfMassLocus = [
+      {lat: 0.0, lng: 0.0},
+      {lat: 0.0, lng: -90.0},
+      {lat: 0.0, lng: -180.0},
+      {lat: 0.0, lng: 90.0},
+      {lat: 0.0, lng: 0.0}
+  ];
   var center = [0, 0];
   var totalweight = 0;
 
@@ -106,6 +113,19 @@ function initialize() {
   drawCenterOfMass('Center of Mass 180', center[0], center[1]+180, 'pink');
   drawCenterOfMass('Center of Mass USA', center[0], center[1]-77, 'green');
   drawCenterOfMass('Center of Mass LA', center[0], center[1]-118, 'purple');
+
+
+  for (i = 0; i < centerOfMassLocus.length; i++) {
+    centerOfMassLocus[i].lat = center[0];
+  }
+  var locus = new google.maps.Polyline({
+      path: centerOfMassLocus,
+      geodesic: false,
+      strokeColor: '#FF0000',
+      strokeOpacity: 1.0,
+      strokeWeight: 2
+  });
+  locus.setMap(map);
 
   map.fitBounds(bounds);
 
