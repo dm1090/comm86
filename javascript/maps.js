@@ -130,7 +130,7 @@ function initialize() {
   map.fitBounds(bounds);
 
   var listener = google.maps.event.addListener(map, "idle", function() {
-    map.setZoom(3);
+    map.setZoom(2);
     google.maps.event.removeListener(listener);
   });
 }
