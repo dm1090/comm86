@@ -79,7 +79,9 @@ function initialize() {
   var totalweight = 0;
 
   window.map = new google.maps.Map(document.getElementById('map'), {
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    streetViewControl: false,
+    scaleControl: true
   });
 
   var infowindow = new google.maps.InfoWindow();
