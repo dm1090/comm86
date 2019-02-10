@@ -28,7 +28,7 @@ function initialize() {
 	['Anil Bhatia', 45.739, -87.074, 1.0, 37],
 	['Gappi', 22.316, 87.310, 1.0, 36],
 	['Siladitya Malakar', 26.123, 91.799, 1.0, 35],
-	['Biplab Mondal', 22.228, 77.453, 1.0, 34],
+	['Biplab Mondal', 23.228, 77.453, 1.0, 34],
 	['Tapas Paul', 28.615, 77.180, 1.0, 33],
 	['Kalyan Samanta', 21.482, 86.918, 1.0, 32],
 	['Partha Bose', 43.774, -79.236, 1.0, 31],
