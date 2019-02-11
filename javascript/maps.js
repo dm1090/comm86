@@ -100,7 +100,9 @@ function changeOpacity() {
 function getPoints() {
     return [
         new google.maps.LatLng(37.782551, -122.445368),
-        new google.maps.LatLng(37.782745, -122.444586)
+        new google.maps.LatLng(37.782745, -122.444586),
+	{location: new google.maps.LatLng(36.099365, -115.173028), weight: 2},
+	{location: new google.maps.LatLng(34.101561, -118.338319), weight: 15}
     ];
 }
 
@@ -206,8 +208,8 @@ function initialize() {
 function loadScript() {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBPiGF_amHt8-0fWOgkKQRKaAAcsDzv_L8&libraries=visualization&v=3.exp&' + 'callback=initialize';
-//  script.src = 'https://maps.googleapis.com/maps/api/js?libraries=visualization&v=3.exp&' + 'callback=initialize';
+//  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBPiGF_amHt8-0fWOgkKQRKaAAcsDzv_L8&libraries=visualization&v=3.exp&' + 'callback=initialize';
+  script.src = 'https://maps.googleapis.com/maps/api/js?libraries=visualization&v=3.exp&' + 'callback=initialize';
   document.body.appendChild(script);
 }
 
