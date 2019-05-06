@@ -4,7 +4,7 @@ var persons = [
     /* Name, Lat, Long, Weight, Sequence Num */
     ['Sandipan Deb', 28.653, 77.196, 1.0, 39],
     ['Dobrain Star', 24.807, 93.941, 1.0, 38],
-    ['Anil Bhatia', 45.739, -87.074, 1.0, 37],
+    ['Anil Bhatia', 40.825, -73.513, 1.0, 37],
     ['Gappi', 22.316, 87.310, 1.0, 36],
     ['Siladitya Malakar', 26.123, 91.799, 1.0, 35],
     ['Biplab Mondal', 23.228, 77.453, 1.0, 34],
