@@ -47,6 +47,24 @@ var persons = [
     ['Bedo 0.5', 34.117, -118.218, 0.5, 1]
 ];
 
+var meets = [
+    ['Sumanta and Surajit, May 12, 2019', // Description
+     'images/Sumanta_Surajit.jpg',       // Image Location
+     42.470, -71.451,                  // Coordinates
+     '340', '192'                      // Display Resolution
+    ],
+    ['Sumit and Surajit, May 7, 2019', // Description
+     'images/Sumit_Surajit.jpg',       // Image Location
+     39.923, -105.064,                 // Coordinates
+     '400', '300'                      // Display Resolution
+    ],
+    ['AGR, Ranadeep and Rajat, March, 2019',
+     'images/AGR_Ranadeep_Rajat.jpg',
+     33.540, -117.782,
+     '400', '300'
+    ]
+];
+
 // Sets the map on all markers in the array.
 function setMapOnAll(map) {
     for (var i = 0; i < markers.length; i++) {
@@ -168,7 +186,8 @@ function initialize() {
         infowindow.open(map, marker);
       }
     })(marker, i));
-      markers.push(marker);
+
+    markers.push(marker);
   }
 
   center[0] /= totalweight;
@@ -178,7 +197,6 @@ function initialize() {
   drawCenterOfMass('Center of Mass 180', center[0], center[1]+180, 'pink');
   drawCenterOfMass('Center of Mass USA', center[0], center[1]-77, 'green');
   drawCenterOfMass('Center of Mass LA', center[0], center[1]-118, 'purple');
-
 
   for (i = 0; i < centerOfMassLocus.length; i++) {
     centerOfMassLocus[i].lat = center[0];
@@ -191,6 +209,33 @@ function initialize() {
       strokeWeight: 2
   });
   locus.setMap(map);
+
+  for (i = 0; i < meets.length; i++) {
+    marker = new google.maps.Marker({
+	position: new google.maps.LatLng(meets[i][2], meets[i][3]),
+	map: map,
+	icon: {
+	    url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+	}
+    });
+
+    bounds.extend(marker.position);
+
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+	return function() {
+	    var text =
+		`<div class="image-section">
+                  <div class="section-style">
+                    <img src="` + meets[i][1] +
+		`" width="` + meets[i][4] +
+		`" height="` + meets[i][5] +
+                `"><p>` + meets[i][0] + `</p></div></div>`;
+	    console.log(text);
+            infowindow.setContent(text);
+            infowindow.open(map, marker);
+      }
+    })(marker, i));
+  }
 
   map.fitBounds(bounds);
 
@@ -208,8 +253,8 @@ function initialize() {
 function loadScript() {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBPiGF_amHt8-0fWOgkKQRKaAAcsDzv_L8&libraries=visualization&v=3.exp&' + 'callback=initialize';
-//  script.src = 'https://maps.googleapis.com/maps/api/js?libraries=visualization&v=3.exp&' + 'callback=initialize';
+//  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBPiGF_amHt8-0fWOgkKQRKaAAcsDzv_L8&libraries=visualization&v=3.exp&' + 'callback=initialize';
+  script.src = 'https://maps.googleapis.com/maps/api/js?libraries=visualization&v=3.exp&' + 'callback=initialize';
   document.body.appendChild(script);
 }
 
