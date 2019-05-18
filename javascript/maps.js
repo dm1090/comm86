@@ -48,6 +48,11 @@ var persons = [
 ];
 
 var meets = [
+    ['Shuja and Sumanta, May 18, 2019', // Description
+     'images/Shuja_and_Sumanta.jpg',       // Image Location
+     40.548, -74.638,                  // Coordinates
+     '400', '225'                      // Display Resolution
+    ],
     ['Sumanta and Surajit, May 12, 2019', // Description
      'images/Sumanta_Surajit.jpg',       // Image Location
      42.470, -71.451,                  // Coordinates
