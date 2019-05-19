@@ -59,9 +59,9 @@ var meets = [
      '400', '225'                      // Display Resolution
     ],
     ['Sumanta and Surajit, May 12, 2019', // Description
-     'images/Sumanta_Surajit.jpg',       // Image Location
+     'images/Gupi_Bagha.jpg',       // Image Location
      42.470, -71.451,                  // Coordinates
-     '340', '192'                      // Display Resolution
+     '230', '219'                      // Display Resolution
     ],
     ['Sumit and Surajit, May 7, 2019', // Description
      'images/Sumit_Surajit.jpg',       // Image Location
