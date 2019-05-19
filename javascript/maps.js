@@ -48,6 +48,11 @@ var persons = [
 ];
 
 var meets = [
+    ['The journey begins, May 1986', // Description
+     'images/KGP_Comm_86.jpg',       // Image Location
+     22.320, 87.310,                  // Coordinates
+     '604', '422'                      // Display Resolution
+    ],
     ['Shuja and Sumanta, May 18, 2019', // Description
      'images/Shuja_and_Sumanta.jpg',       // Image Location
      40.548, -74.638,                  // Coordinates
