@@ -55,8 +55,8 @@ var meets = [
     ],
     ['Shuja and Surajit, May 26, 2019', // Description
      'images/Shuja_Surajit.jpg',       // Image Location
-     40.550, -74.647,                  // Coordinates
-     '400', '553'                      // Display Resolution
+     40.457, -74.724,                  // Coordinates
+     '400', '355'                      // Display Resolution
     ],
     ['Shuja and Sumanta, May 18, 2019', // Description
      'images/Shuja_and_Sumanta.jpg',       // Image Location
